@@ -1,5 +1,5 @@
 const axios = require('axios');
-const asyncHandler = require('express-async-handler');
+const  asyncHandler = require('express-async-handler');
 const saveData = require('../utils/saveLogsData');
 
 exports.getRepositories = asyncHandler(async (req, res) => {
@@ -31,4 +31,20 @@ exports.getSearchedRepositories = asyncHandler(async (req, res) => {
       repositoryList: data.items
     })
   }
+});
+
+exports.getRepositoryById = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  try {
+    const { data } = await axios.get(`https://api.github.com/repositories/${id}`);
+    
+    res.status(200).json({
+      repository: data
+    })
+  } catch(error) {
+    res.status(404).json({
+      message: "No repository found with ID " + id
+    })
+  }
+  
 });

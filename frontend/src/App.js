@@ -4,7 +4,6 @@ import { Container } from 'react-bootstrap';
 import HomePage from './pages/HomePage';
 import PageNotFound from './components/PageNotFound';
 import RepositoryPage from './pages/RepositoryPage';
-import './App.css';
 
 function App() {
   return (

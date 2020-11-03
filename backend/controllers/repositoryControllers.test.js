@@ -14,4 +14,5 @@ describe('requests to /api/repositories', () => {
         expect(response.data.items.length).toBe(6);
     });
   });
+
 });
