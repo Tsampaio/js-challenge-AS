@@ -13,7 +13,7 @@ describe('repositoryActions', () => {
   test("repositoryActions should be defined", () => {
     expect(repositoryListAction).toBeDefined();
   });
-  test('adds response word to state', () => {
+  test('axios response', () => {
     const repositories = { loading: false, repositories: undefined}
     const store = storeFactory();
 
